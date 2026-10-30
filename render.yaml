@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: cumple-shadu
+    runtime: static
+    buildCommand: echo "Sitio estatico, no requiere build"
+    staticPublishPath: ./public
+    pullRequestPreviewsEnabled: false
+    headers:
+      - path: /*
+        name: X-Robots-Tag
+        value: noindex, nofollow
+      - path: /index.html
+        name: Cache-Control
+        value: no-cache
+      - path: /music/*
+        name: Cache-Control
+        value: public, max-age=604800
+      - path: /img/*
+        name: Cache-Control
+        value: public, max-age=604800
+      - path: /pc/*
+        name: Cache-Control
+        value: public, max-age=604800
+      - path: /pc2/*
+        name: Cache-Control
+        value: public, max-age=604800
+      - path: /pc3/*
+        name: Cache-Control
+        value: public, max-age=604800
+      - path: /pc4/*
+        name: Cache-Control
+        value: public, max-age=604800
+      - path: /gal2/*
+        name: Cache-Control
+        value: public, max-age=604800
+      - path: /gal3/*
+        name: Cache-Control
+        value: public, max-age=604800
+      - path: /stk/*
+        name: Cache-Control
+        value: public, max-age=604800
